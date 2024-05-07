@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<section>
+		<div class="container">
+			<div class="row mt-5">
+				<div class="col-md-6 offset-md-3">
+					<div class="my-card mt-3">
+						<h1 class="text-center">LogIn</h1>
+						<form class="form-signin" method="post" th:action="@{/dologin}">
+							<div th:if="${param.error}" class="alert alert-danger">
+								<p>Invalid username and password</p>
+							</div>
+							<div th:if="${param.logout}" class="alert alert-success">
+								<p>You have been logout</p>
+							</div>
+							<div class="mb-3">
+								<label for="username" class="form-label">Email address</label>
+								<input type="email" class="form-control" id="username" name="username" required
+									autofocus>
+							</div>
+							<div class="mb-3">
+								<label for="password" class="form-label">Password</label>
+								<input type="password" class="form-control" id="password" name="password" required>
+							</div>
+							<div class="mb-3 form-check">
+								<span>
+									<input type="checkbox" class="form-check-input" id="exampleCheck1">
+									<label class="form-check-label" for="exampleCheck1">Remember me</label>
+								</span>
+								<a href="/signup/">Register here</a>
+							</div>
+							<div class="container text-center">
+								<button type="submit" class="btn btn-primary text-white">Login</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

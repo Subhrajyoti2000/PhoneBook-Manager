@@ -1,0 +1,95 @@
+@charset "ISO-8859-1";
+body{
+	background-color: #e2e2e2!important;
+}
+
+.bg-primary{
+	background-color: #009688!important;
+}
+.banner{
+	width: 100%;
+	height: 91vh;
+	background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(../img/baner.jpg) no-repeat center center/cover;
+	color: aliceblue;
+}
+.btn:hover{
+	cursor: pointer!important;
+	background-color: aliceblue!important;
+	color: #009688!important;
+}
+.my-card{
+	padding: 20px;
+	background: azure;
+}
+.form-check {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* sidebar style */
+@media only screen and (max-width: 600px){
+	.sidebar{
+		display: none;
+		width: 70% !important;
+		background: white !important;
+		height: 100vh !important;
+		position: fixed !important;
+		padding-top: 30px !important;
+		z-index: -1;
+	}
+	.content{
+		margin-left: 0% !important;
+	}
+	.sidebar a{
+		width: 26vh !important;
+		padding: 23px 25px !important;
+	}
+}
+.sidebar{
+	width: 18%;
+	background: white;
+	height: 100vh;
+	position: fixed;
+	padding-top: 45px;
+}
+.sidebar a{
+	display: block;
+	width: 18vw;
+	padding: 23px 25px;
+	text-decoration: none;
+	color: gray;
+}
+.sidebar a:hover{
+	background: #e2e2e2;
+}
+.content{
+	margin-left: 20%;
+}
+.sidebar .cross_btn{
+	position: absolute;
+	top: 0px;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+.my_profile_picture{
+	width: 20px;
+	height: 20px;
+	border-radius: 100%;
+	margin: 6px;
+	object-fit: cover;
+}
+
+/*search css*/
+.search-container{
+	position: relative;
+}
+.search-result{
+	position: absolute;
+	background-color: white;
+	width: 100%;
+	padding: 10px;
+	border: 1px solid gray;
+	display: none;
+}

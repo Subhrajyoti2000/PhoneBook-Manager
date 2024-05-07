@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<section>
+		<div class="card me-4 ms-3" th:if="${contact}">
+			<div class="card-body">
+				<div class="container text-center">
+					<img style="height: 150px; width: 150px;" th:src="@{'/img/'+${contact.image}}" alt="profile photo"
+						class="my_profile_picture" />
+					<h3><span th:text="${contact.name}"></span> (<span th:text="${contact.secondName}"></span>)</h3>
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">#Id</th>
+								<th scope="col">PBUSER<span th:text="${contact.cId}"></span></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">Phone</th>
+								<td><span th:text="${contact.phone}"></span></td>
+							</tr>
+							<tr>
+								<th scope="row">Email</th>
+								<td><span th:text="${contact.email}"></span></td>
+							</tr>
+							<tr>
+								<th scope="row">Work</th>
+								<td><span th:text="${contact.work}"></span></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="description">
+						<th:block th:utext="${contact.description}"></th:block>
+					</div>
+					<div class="container mt-3" style="display: flex; justify-content: center; align-items: flex-end;">
+						<button class="btn btn-danger btn-sm m-1"
+							th:onclick="|deleteContact(${contact.cId})|">Delete</button>
+						<form th:action="@{'/user/update-contact/'+${contact.cId}}" method="post" class="mt-2">
+							<button type="submit" class="btn btn-primary btn-sm m-1">Update</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h1 class="text-center" th:unless="${contact}">You dont have permission to see this contact..</h1>
+	</section>
+</body>
+
+</html>
